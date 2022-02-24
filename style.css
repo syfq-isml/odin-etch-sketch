@@ -1,0 +1,14 @@
+#container {
+    width: 480px;
+    height: 480px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid; */
+    padding: 0;
+    margin:0;
+}
+
+.hovering {
+    background-color: black;
+}
