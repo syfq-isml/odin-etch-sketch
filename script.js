@@ -37,7 +37,8 @@ let clrBtn = document.getElementById('clear-button');
 clrBtn.addEventListener('click', clearBoard);
 
 function clearBoard() {
-    
+    console.log(drawingBrdSq.length)
+    while (drawingBrdSq.length >0) drawingBrdSq[0].remove();
 }
 
 
