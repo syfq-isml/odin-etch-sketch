@@ -52,11 +52,11 @@ function clearBoard() {
 
 function resetBoard() {
     clearBoard();
-    noOfSquares = prompt("How many squares?", "48");
+    noOfSquares = prompt("How many pixels per side for your square canvas? (1-100)", "48");
 
-    while (noOfSquares>100) {
-        alert("Try a lower number!");
-        noOfSquares = prompt("How many squares?", "16");
+    while (noOfSquares>100 || noOfSquares<1 || noOfSquares === '') {
+        alert("Try a different number!");
+        noOfSquares = prompt("How many squares?", "48");
     }
 
     squareWidth = divisions/noOfSquares;
