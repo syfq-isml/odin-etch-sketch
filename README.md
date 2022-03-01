@@ -12,3 +12,4 @@ TheOdinProject: Etch-A-Sketch
 - [ ] add opacity toggle
 - [ ] add gridline toggle
 - [ ] add click or hover toggle
+- [ ] add resize canvas size function
