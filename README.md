@@ -14,7 +14,7 @@
 - [ ] add click or hover toggle
 - [ ] add resize canvas size function
 - [ ] add share button
-- [ ] add function where a stroke can start anywhere on the canvas, then continue with the rest of the stroke
+- [x] add function where a stroke can start anywhere on the canvas, then continue with the rest of the stroke
 
 # Credits and Sources
 Background by <a href="https://unsplash.com/@dannie_jing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dannie Jing</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

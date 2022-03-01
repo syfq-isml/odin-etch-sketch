@@ -6,8 +6,7 @@ let divisions = container.clientWidth;
 let noOfSquares = 48;
 let squareWidth = divisions/noOfSquares;
 createBoard(noOfSquares, squareWidth);
-initiateDraw();
-
+canvasHover();
 
 function createBoard(noOfSquares, squareWidth) {
     for (let i=0; i<noOfSquares; i++) {
@@ -25,12 +24,20 @@ function createBoard(noOfSquares, squareWidth) {
     }
 }
 
+function canvasHover() {
+    let drawingBrdSq = document.getElementsByClassName('drawing-squares');
+        for (let i =0; i < drawingBrdSq.length; i++) {
+            drawingBrdSq[i].addEventListener("click", initiateDraw);
+        }
+}
+
 function initiateDraw() {
     let drawingBrdSq = document.getElementsByClassName('drawing-squares');
     for (let i =0; i < drawingBrdSq.length; i++) {
         drawingBrdSq[i].addEventListener("mouseenter", colorSq, {once:true});
     }
 }
+
 function colorSq(e) {
     e.target.className = `${e.target.className} hovering`;
 }
@@ -45,7 +52,7 @@ function clearBoard() {
 
 function resetBoard() {
     clearBoard();
-    noOfSquares = prompt("How many squares?", "16");
+    noOfSquares = prompt("How many squares?", "48");
 
     while (noOfSquares>100) {
         alert("Try a lower number!");
@@ -54,7 +61,7 @@ function resetBoard() {
 
     squareWidth = divisions/noOfSquares;
     createBoard(noOfSquares, squareWidth);
-    initiateDraw();
+    canvasHover();
 }
 
 
