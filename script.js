@@ -2,7 +2,7 @@ let container = document.getElementById('container');
 
 // initialization on default board size and starting drawing ability
 let divisions = 480;
-let noOfSquares = 48;
+let noOfSquares = 64;
 let squareWidth = divisions/noOfSquares;
 createBoard(noOfSquares, squareWidth);
 canvasHover();
@@ -49,16 +49,16 @@ function clearBoard() {
     while (drawingBrdSq.length >0) drawingBrdSq[0].remove();
 }
 
-function isString(string) {
-    if (typeof string === 'string' || string instanceof String) {
-        return true;
-    } else {
-        return false;
-    }
-}
+// function isString(string) {
+//     if (typeof string === 'string' || string instanceof String) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
 function resetBoard() {
-    noOfSquares = prompt("How many pixels per side for your square canvas? (1-100)", "48");
+    noOfSquares = prompt("How many pixels on each side of your square canvas? (1-100)", "64");
     console.log(typeof noOfSquares);
     if (noOfSquares === null) 
         return;
