@@ -7,6 +7,7 @@ body {
     background-image: url('img/bg-big.jpg');
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -62,6 +63,6 @@ p {
 }
 
 .bottom-bar.container {
-    align-self: flex-end;
+   
 }
 

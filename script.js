@@ -1,8 +1,7 @@
 let container = document.getElementById('container');
 
-
 // initialization on default board size and starting drawing ability
-let divisions = container.clientWidth;
+let divisions = 480;
 let noOfSquares = 48;
 let squareWidth = divisions/noOfSquares;
 createBoard(noOfSquares, squareWidth);
