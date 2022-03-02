@@ -49,19 +49,40 @@ function clearBoard() {
     while (drawingBrdSq.length >0) drawingBrdSq[0].remove();
 }
 
-function resetBoard() {
-    clearBoard();
-    noOfSquares = prompt("How many pixels per side for your square canvas? (1-100)", "48");
+function isString(string) {
+    if (typeof string === 'string' || string instanceof String) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-    while (noOfSquares>100 || noOfSquares<1 || noOfSquares === '') {
-        alert("Try a different number!");
-        noOfSquares = prompt("How many squares?", "48");
+function resetBoard() {
+    noOfSquares = prompt("How many pixels per side for your square canvas? (1-100)", "48");
+    console.log(typeof noOfSquares);
+    if (noOfSquares === null) 
+        return;
+
+    
+    console.log(typeof noOfSquares);
+    if (noOfSquares >100 || noOfSquares <1 || noOfSquares === '') {
+        alert("Enter a valid number.");
+        resetBoard();
     }
 
+    // else if (typeof noOfSquares === 'string' || noOfSquares instanceof String) {
+    //     alert("Enter a number");
+    //     resetBoard();
+    //}
+
+    else {
+    clearBoard();
     squareWidth = divisions/noOfSquares;
     createBoard(noOfSquares, squareWidth);
     canvasHover();
+    }
 }
+
 
 
 
