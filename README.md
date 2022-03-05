@@ -18,8 +18,6 @@ Full task can be viewed [here](https://www.theodinproject.com/paths/foundations/
 
 3. The clear button listens for a click event, and when fired, runs the `resetBoard` function. First the user is prompted for a new grid size, which is then stored into the exisitng `noOfSquares` variable. This is then checked to handle unwanted inputs such as cancelling the prompt, entering an empty response, entering a number higher than 100 or lower than 1. If the input is valid, then the exisitng square divs are deleted with the `clearBoard` function first, before moving to generate the requested number of square divs. It is to note that this operation takes up a significant amount of processing time.
 
-A difficulty arises when checking whether the input entered from the prompt is a number since the `prompt` function always returns a string. parseInt(noOfSquares) will retrun 'number' even on string inputs, thus rendering `isNaN()` of little use.
-
 # Live Preview
 The live preview can be viewed [here](https://syfq-isml.github.io/odin-etch-sketch/).
 

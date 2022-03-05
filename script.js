@@ -49,39 +49,37 @@ function clearBoard() {
     while (drawingBrdSq.length >0) drawingBrdSq[0].remove();
 }
 
-// function isString(string) {
-//     if (typeof string === 'string' || string instanceof String) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-
 function resetBoard() {
     noOfSquares = prompt("How many pixels on each side of your square canvas? (1-100)", "64");
-    console.log(typeof noOfSquares);
+    // console.log(noOfSquares);
     if (noOfSquares === null) 
         return;
-
-    
-    console.log(typeof noOfSquares);
-    if (noOfSquares >100 || noOfSquares <1 || noOfSquares === '') {
+    else if (noOfSquares === '') {
+        alert('Enter a valid number!');
+        resetBoard();
+    } else if (noOfSquares.includes('.')) {
+        alert("Don't use decimals!");
+        resetBoard();
+    } else {
+    // console.log(noOfSquares);
+    noOfSquares = parseInt(noOfSquares);
+    // console.log(noOfSquares);
+    if (isNaN(noOfSquares)) {
+        alert('Enter a valid number!');
+        resetBoard();
+    } else if (noOfSquares >100 || noOfSquares <1) {
         alert("Enter a valid number.");
         resetBoard();
-    }
-
-    // else if (typeof noOfSquares === 'string' || noOfSquares instanceof String) {
-    //     alert("Enter a number");
-    //     resetBoard();
-    //}
-
-    else {
+    } else {
     clearBoard();
     squareWidth = divisions/noOfSquares;
     createBoard(noOfSquares, squareWidth);
     canvasHover();
     }
+    }
 }
+
+
 
 
 
