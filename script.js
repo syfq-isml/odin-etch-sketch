@@ -49,16 +49,21 @@ function clearBoard() {
     while (drawingBrdSq.length >0) drawingBrdSq[0].remove();
 }
 
+function containsSpecialChars(str) {
+    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    return specialChars.test(str);
+  }
+
 function resetBoard() {
     noOfSquares = prompt("How many pixels on each side of your square canvas? (1-100)", "64");
     // console.log(noOfSquares);
     if (noOfSquares === null) 
         return;
-    else if (noOfSquares === '') {
-        alert('Enter a valid number!');
+    if (containsSpecialChars(noOfSquares)) {
+        alert("Don't use symbols!");
         resetBoard();
-    } else if (noOfSquares.includes('.')) {
-        alert("Don't use decimals!");
+    } else if (noOfSquares === '') {
+        alert('Enter a valid number!');
         resetBoard();
     } else {
     // console.log(noOfSquares);
